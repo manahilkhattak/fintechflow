@@ -8,13 +8,12 @@ function Loan_Status(){
   const {show_toast} = use_toast()
 
   useEffect(()=>{
-    fetch('http://localhost:5000/api/loans')
-      .then(r=>r.json())
+fetch('https://perpetual-kindness-production-b858.up.railway.app/api/loans')      .then(r=>r.json())
       .then(data=>set_loans(data))
   },[])
 
   function update_status(id,status){
-    fetch(`http://localhost:5000/api/loans/${id}/status`,{
+    fetch(`https://perpetual-kindness-production-b858.up.railway.app/api/loans/${id}/status`,{
       method:'PATCH',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({status})

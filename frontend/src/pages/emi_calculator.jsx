@@ -31,8 +31,7 @@ function Emi_Calculator(){
   function calculate(){
     if(!principal||!rate||!months){set_error('All fields are required');return}
     set_error('')
-    fetch(`http://localhost:5000/api/emi-calculator?principal=${principal}&annualRate=${rate}&months=${months}`)
-      .then(r=>r.json())
+fetch(`https://perpetual-kindness-production-b858.up.railway.app/api/emi-calculator?principal=${principal}&annualRate=${rate}&months=${months}`)      .then(r=>r.json())
       .then(data=>{
         if(data.error){set_error(data.error);return}
         set_result(data)

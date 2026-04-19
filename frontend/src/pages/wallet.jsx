@@ -26,7 +26,7 @@ function Wallet(){
   const displayed = use_count_up(wallet.balance)
 
   useEffect(()=>{
-    fetch('http://localhost:5000/api/wallet')
+    fetch('https://perpetual-kindness-production-b858.up.railway.app/api/wallet')
       .then(r=>r.json())
       .then(data=>set_wallet(data))
   },[])
@@ -38,7 +38,7 @@ function Wallet(){
 
   function handle_deposit(){
     const amount = parseFloat(deposit_amount)
-    fetch('http://localhost:5000/api/wallet/deposit',{
+    fetch('https://perpetual-kindness-production-b858.up.railway.app/api/wallet',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({amount})
@@ -55,7 +55,7 @@ function Wallet(){
 
   function handle_withdraw(){
     const amount = parseFloat(withdraw_amount)
-    fetch('http://localhost:5000/api/wallet/withdraw',{
+    fetch('https://perpetual-kindness-production-b858.up.railway.app/api/wallet'),{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({amount})
