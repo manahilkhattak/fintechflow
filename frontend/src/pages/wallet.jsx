@@ -59,7 +59,7 @@ function Wallet(){
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({amount})
-    })
+    }
     .then(r=>r.json())
     .then(data=>{
       if(data.error){show_toast(data.error,'error');return}
