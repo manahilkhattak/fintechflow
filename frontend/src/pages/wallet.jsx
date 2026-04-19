@@ -1,4 +1,4 @@
-import {useState,useEffect,useRef} from 'react'
+import {useState,useEffect} from 'react'
 import {use_toast} from '../context/toast_context'
 import format_pkr from '../utils/format_pkr'
 
@@ -8,7 +8,7 @@ function use_count_up(target){
     let start = 0
     const step = target/50
     const interval = setInterval(()=>{
-      start += step
+      start+=step
       if(start>=target){set_display(target);clearInterval(interval)}
       else set_display(Math.floor(start))
     },20)
@@ -38,8 +38,7 @@ function Wallet(){
 
   function handle_deposit(){
     const amount = parseFloat(deposit_amount)
-        fetch('https://perpetual-kindness-production-b858.up.railway.app/api/wallet',{
-
+    fetch('https://perpetual-kindness-production-b858.up.railway.app/api/wallet/deposit',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({amount})
@@ -56,8 +55,8 @@ function Wallet(){
 
   function handle_withdraw(){
     const amount = parseFloat(withdraw_amount)
-fetch('https://perpetual-kindness-production-b858.up.railway.app/api/wallet/withdraw',{
-        method:'POST',
+    fetch('https://perpetual-kindness-production-b858.up.railway.app/api/wallet/withdraw',{
+      method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({amount})
     })
