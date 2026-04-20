@@ -7,8 +7,7 @@ function Transactions(){
   const [filter,set_filter] = useState('all')
 
   useEffect(()=>{
-    fetch('https://perpetual-kindness-production-b858.up.railway.app/api/transactions')
-      .then(r=>r.json())
+fetch('https://perpetual-kindness-production-b858.up.railway.app/api/wallet/transactions')      .then(r=>r.json())
       .then(data=>set_transactions(data))
   },[])
 
