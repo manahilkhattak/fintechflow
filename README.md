@@ -32,3 +32,4 @@ Frontend runs on: http://localhost:5173
 | GET | /api/loans | Get all loans |
 | PATCH | /api/loans/:id/status | Update loan status |
 | GET | /api/emi-calculator | Calculate EMI |
+ 
