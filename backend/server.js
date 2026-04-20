@@ -4,7 +4,7 @@ const wallet_routes = require('./routes/wallet')
 const loan_routes = require('./routes/loans')
 
 const app = express()
-app.use(cors())
+app.use(cors({origin:'*'}))
 app.use(express.json())
 
 app.use('/api/wallet',wallet_routes)
